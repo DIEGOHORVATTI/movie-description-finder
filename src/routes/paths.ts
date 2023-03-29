@@ -3,7 +3,7 @@ const path = (root: string, sublink: string) => {
 }
 
 const ROOTS_AUTH = '/auth'
-const ROOTS_DASHBOARD = '/dashboard'
+const ROOTS_DASHBOARD = '/'
 
 export const PATH_AUTH = {
   registerUnprotected: path(ROOTS_AUTH, '/register-unprotected'),

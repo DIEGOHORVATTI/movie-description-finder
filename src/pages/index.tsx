@@ -1,13 +1,36 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { PATH_DASHBOARD } from 'src/routes/paths'
+import { Box, Typography, Container } from '@mui/material'
+import { MotionContainer, varBounce } from '@Components/animate'
+import { styled } from '@mui/material/styles'
+import { m } from 'framer-motion'
+import Page from '@Components/Page'
+import Layout from '../layouts'
 
-export default function HomePage() {
-  const { push } = useRouter()
+const RootStyle = styled('div')(({ theme }) => ({
+  display: 'flex',
+  height: '100%',
+  alignItems: 'center',
+  paddingTop: theme.spacing(15),
+  paddingBottom: theme.spacing(10)
+}))
 
-  useEffect(() => {
-    push(PATH_DASHBOARD.root)
-  }, [push])
+PageHome.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>
+}
 
-  return <></>
+export default function PageHome() {
+  return (
+    <Page title="Home" sx={{ height: 1 }}>
+      <RootStyle>
+        <Container component={MotionContainer}>
+          <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
+            <m.div variants={varBounce().in}>
+              <Typography variant="h3" paragraph>
+                Hello world!
+              </Typography>
+            </m.div>
+          </Box>
+        </Container>
+      </RootStyle>
+    </Page>
+  )
 }
