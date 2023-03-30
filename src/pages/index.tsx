@@ -25,7 +25,7 @@ export default function PageHome() {
           <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
             <m.div variants={varBounce().in}>
               <Typography variant="h3" paragraph>
-                Hello world!
+                Bem vindo a home
               </Typography>
             </m.div>
           </Box>
